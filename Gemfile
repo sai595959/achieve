@@ -56,8 +56,7 @@ gem 'twitter-bootstrap-rails'
 
 gem 'jquery-turbolinks'
 
-<<<<<<< HEAD
+
 gem 'rails_12factor', group: :production
-=======
+
 gem 'devise'
->>>>>>> develop
