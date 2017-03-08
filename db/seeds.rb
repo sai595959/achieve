@@ -17,7 +17,7 @@
                name: "test_#{n}"
                )
 end
-a
+
 n = 1
 while n <= 100
   Blog.create(
@@ -27,3 +27,4 @@ while n <= 100
   )
   n = n + 1
 end
+test
