@@ -70,3 +70,5 @@ end
 gem 'rails_admin'
 
 gem 'therubyracer'
+
+gem 'cancan'
