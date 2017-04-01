@@ -13,9 +13,9 @@ module Achieve
     # -- all .rb files in that directory are automatically loaded.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
+    config.action_view.field_error_proc = proc { |html_tag, _| html_tag }
 
     config.i18n.default_locale = :ja
-  
+
   end
 end
