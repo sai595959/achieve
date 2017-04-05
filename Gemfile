@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'better_errors'
+
 end
 
 group :development do
@@ -74,3 +75,7 @@ gem 'rails_admin'
 gem 'therubyracer'
 
 gem 'cancan'
+
+gem 'binding_of_caller'
+
+gem 'activeresource'

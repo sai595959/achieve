@@ -46,6 +46,8 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.0.6)
     cancan (1.6.10)
@@ -246,6 +248,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   byebug
   cancan
   coffee-rails (~> 4.2)
