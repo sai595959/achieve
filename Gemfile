@@ -79,3 +79,7 @@ gem 'cancan'
 gem 'binding_of_caller'
 
 gem 'activeresource'
+
+gem 'rb-readline'
+
+gem 'actioncable'
