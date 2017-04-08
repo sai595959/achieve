@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'better_errors'
+
 end
 
 group :development do
@@ -74,3 +75,7 @@ gem 'rails_admin'
 gem 'therubyracer'
 
 gem 'cancan'
+
+gem 'binding_of_caller'
+
+gem 'activeresource'
