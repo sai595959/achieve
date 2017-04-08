@@ -1,4 +1,4 @@
-class Blog < ApplicationRecord
+class Blog < ActiveRecord::Base
     validates :title, presence: true
-    belongs_to :user, optional: true
+    belongs_to :user
 end

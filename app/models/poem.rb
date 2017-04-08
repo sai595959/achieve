@@ -1,3 +1,3 @@
-class Poem < ActiveResource::Base
-  self.site =""
+class Poem < ActiveRecord::Base
+
 end
