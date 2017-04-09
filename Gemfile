@@ -85,3 +85,5 @@ gem 'activeresource'
 gem 'rb-readline'
 
 gem 'actioncable'
+
+gem "her"
