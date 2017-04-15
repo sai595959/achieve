@@ -1,4 +1,4 @@
-class AddUserIdToBlogs < ActiveRecord::Migration[5.0]
+class AddUserIdToBlogs < ActiveRecord::Migration
   def change
     add_column :blogs, :user_id, :integer
   end
