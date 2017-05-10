@@ -4,7 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
-  has_many :blogs
+  # BlogモデルのAssociation設定
+  # dependent: :destroyを設定することでBlogモデルが削除された時に紐づくコメントのレコードも削除される
+  has_many :blogs, dependent: :destroy
+
+  # CommentモデルのAssociation設定
+  # dependent: :destroyを設定することでBlogモデルが削除された時に紐づくコメントのレコードも削除される
+  has_many :comments, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
 
