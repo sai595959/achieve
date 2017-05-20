@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
         # JS形式でレスポンスを返します。
-        format.js { render :index }
+        format.js { render :index, notice: 'コメントを投稿しました。'  }
       else
         format.html { render :new }
       end

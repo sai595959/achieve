@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>ユーザー一覧</h2>
+  <% @users.each do |user| %>
+      <div class="container-child col-md-2 col-sm-4 col-xs-6 test">
+        <div class="user_info">
+          <%= profile_img(user,'user_index') %><br/>
+          <%= user.name %><br/>
+          <%= link_to "詳細", user_path(user.id), class: 'btn btn-default btn-sm btn-success' %><br/>
+          <% if current_user.id != user.id %>
+
+            <%= render 'follow_form', user: user %>
+          <% else %>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+</div>

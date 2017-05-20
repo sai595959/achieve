@@ -12,6 +12,15 @@ class User < ActiveRecord::Base
   # dependent: :destroyを設定することでBlogモデルが削除された時に紐づくコメントのレコードも削除される
   has_many :comments, dependent: :destroy
 
+  # Userが複数のRelationshipを持つ
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :followers, through: :reverse_relationships, source: :follower
+
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :followers, through: :reverse_relationships, source: :follower
+
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
@@ -61,6 +70,21 @@ def update_with_password(params, *options)
     params.delete :current_password
     update_without_password(params, *options)
   end
+end
+
+#指定のユーザをフォローする
+def follow!(other_user)
+  relationships.create!(followed_id: other_user.id)
+end
+
+#指定のユーザのフォローを解除する
+def unfollow!(other_user)
+  relationships.find_by(followed_id: other_user.id).destroy
+end
+
+#フォローしているかどうかを確認する
+def following?(other_user)
+  relationships.find_by(followed_id: other_user.id)
 end
 
 end

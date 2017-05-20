@@ -12,6 +12,16 @@ module ApplicationHelper
       end
         image_tag(img_url, alt: user.name, class:'profile_img_round')
 
+    elsif page == 'user_index'
+      return image_tag(user.avatar, alt: user.name, class:'profile_img_index') if user.avatar?
+
+      unless user.provider.blank?
+        img_url = user.image_url
+      else
+        img_url = 'no_image.png'
+      end
+        image_tag(img_url, alt: user.name, class:'profile_img_index')
+
     else
       return image_tag(user.avatar, alt: user.name) if user.avatar?
 
