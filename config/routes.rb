@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'notifications/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # dive14_snsでコメントに
