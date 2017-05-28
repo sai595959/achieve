@@ -99,3 +99,6 @@ gem 'faraday', '< 0.10'
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
+
+# アラートの
+gem 'pusher'

@@ -4,13 +4,28 @@
       <div class="container-child col-md-2 col-sm-4 col-xs-6 test">
         <div class="user_info">
           <%= profile_img(user,'user_index') %><br/>
-          <%= user.name %><br/>
-          <%= link_to "詳細", user_path(user.id), class: 'btn btn-default btn-sm btn-success' %><br/>
-          <% if current_user.id != user.id %>
 
-            <%= render 'follow_form', user: user %>
+          <!-- ユーザ詳細（後久オリジナル） -->
+          <!-- <%= user.name %><br/>
+          <%= link_to "詳細", user_path(user.id), class: 'btn btn-default btn-sm btn-success' %><br/> -->
+
+
+          <!-- メッセージ画面へのリンク -->
+          <% if user.id != current_user.id %>
+
+              <div class="item">
+                <%= link_to user.name, user %></br>
+                <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+                <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+              </div>
+
           <% else %>
+            <div class="item">
+              <%= link_to user.name, user %></br>
+            </div>
+
           <% end %>
+
         </div>
       </div>
   <% end %>

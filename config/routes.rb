@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # dive14_snsでコメントに
@@ -42,6 +43,12 @@ Rails.application.routes.draw do
 
     if Rails.env.development?
       mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    end
+
+
+    # DIVE19 メッセージ機能
+    resources :conversations do
+      resources :messages
     end
 
 
