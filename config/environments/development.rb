@@ -40,8 +40,21 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # 開発環境設定
+  # config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  # config.action_mailer.delivery_method = :letter_opener_web
+
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener_web
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings =
+  {
+   user_name: "app63689933@heroku.com",
+   password: "4biissji088059",
+   domain: "heroku.com",
+   address: "smtp.sendgrid.net",
+   port: 587,
+   authentication: :plain,
+   enable_starttls_auto: true
+  }
 
 
 end
