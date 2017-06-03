@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # actionmailerの設定
-  config.action_mailer.default_url_options = { host: 'quiet-bayou-42742.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'fathomless-basin-33095.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
